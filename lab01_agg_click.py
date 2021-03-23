@@ -13,18 +13,18 @@ dag = DAG(
     dag_id='nikolay_potapov_lab01',
     default_args=args,
     description='Simple DAG export agg data to Clickhouse',
-    schedule_interval=None,
+    schedule_interval=None
 )
 
-def export_click(ds, **kwargs):
-    print(ds)
+def export_click():
+    print('Hello from export_click')
     return 'Hello world!'
 
 start = PythonOperator(
-    task_id='export to Clickhouse',
+    task_id='export_to_clickhouse',
     provide_context=True,
     python_callable=export_click,
-    dag=dag,
+    dag=dag
 )
 
 start
