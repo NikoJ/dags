@@ -22,7 +22,7 @@ def export_click():
 
 start = PythonOperator(
     task_id='export_to_clickhouse',
-    provide_context=True,
+    provide_context=False,
     python_callable=export_click,
     dag=dag
 )
