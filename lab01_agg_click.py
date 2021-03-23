@@ -17,7 +17,7 @@ dag = DAG(
     dag_id='nikolay_potapov_lab01',
     default_args=args,
     description='Simple DAG export agg data to Clickhouse',
-    schedule_interval='* 1 * * *'
+    schedule_interval=None
 )
 
 start = PythonOperator(task_id='export to Clickhouse', python_callable=export_click, dag=dag)
